@@ -7,39 +7,48 @@
 </head>
 <body>
 
-<nav>
-    <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 10px;">
-        <span class="icon">🚀</span>
-        <span class="text" style="font-weight:bold; color: var(--orange);">UTSA AERO</span>
-    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <a href="#safety" class="nav-item">
-        <span class="icon">🛡️</span>
-        <span class="text">Safety SOPs</span>
-    </a>
-    <a href="#mixing" class="nav-item">
-        <span class="icon">🧪</span>
-        <span class="text">Propellant Mixing</span>
-    </a>
-    <a href="#design" class="nav-item">
-        <span class="icon">📐</span>
-        <span class="text">Grain Geometry</span>
-    </a>
-    <a href="#static" class="nav-item">
-        <span class="icon">💥</span>
-        <span class="text">Static Fire</span>
-    </a>
-</nav>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-<main>
-    <h1>Propulsion Knowledge Base</h1>
-    <p>Documenting SRAD Single-Stage Solid Rocketry for future Roadrunners.</p>
-    
-    <div class="card">
-        <h2>Getting Started</h2>
-        <p>This wiki contains the technical specifications for our "Blue" propellant formula and 54mm motor hardware.</p>
-    </div>
-</main>
+    <nav id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+        
+        <div style="padding: 0 30px 20px 30px;">
+            <h2 style="color: var(--orange); margin: 0;">UTSA AERO</h2>
+            <p style="color: #ccc; font-size: 0.8rem;">Propulsion Division</p>
+        </div>
+
+        <a href="#safety" class="nav-item">🛡️ Safety SOPs</a>
+        <a href="#mixing" class="nav-item">🧪 Propellant Mixing</a>
+        <a href="#design" class="nav-item">📐 Grain Geometry</a>
+        <a href="#static" class="nav-item">💥 Static Fire</a>
+    </nav>
+
+    <main>
+        <h1>Propulsion Knowledge Base</h1>
+        <p>A technical guide for UTSA SRAD single-stage solid rockets.</p>
+        
+        <div class="card" id="safety">
+            <h2>Standard Safety Protocol</h2>
+            <p>Before any propellant work begins, ensure the following is met:</p>
+            <ul>
+                <li>Static-dissipative clothing only.</li>
+                <li>Verify humidity levels are below 60% for APCP mixing.</li>
+                <li>Explosive Storage Magazine (ESM) logs updated.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
