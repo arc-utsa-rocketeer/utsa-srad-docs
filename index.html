@@ -8,72 +8,173 @@
         :root {
             --navy: #0C2340;
             --orange: #F15A22;
-            --light: #f4f4f4;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; }
-        
-        /* Sidebar Navigation */
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            background-color: var(--light-gray);
+            color: var(--navy);
+            display: flex;
+        }
+
+        /* --- MODERN SLIDE-OUT SIDEBAR --- */
         nav {
-            width: 250px;
+            width: 60px; /* Hidden state width */
             background: var(--navy);
-            color: white;
             height: 100vh;
             position: fixed;
-            padding: 20px;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 4px 0px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
         }
-        nav h2 { color: var(--orange); font-size: 1.2rem; }
-        nav a { color: white; text-decoration: none; display: block; padding: 10px 0; border-bottom: 1px solid #1a3a5a; }
-        nav a:hover { color: var(--orange); }
 
-        /* Main Content */
-        main {
-            margin-left: 290px;
-            padding: 40px;
-            max-width: 800px;
+        /* Expand on Hover */
+        nav:hover {
+            width: 260px;
         }
-        h1 { color: var(--navy); border-bottom: 3px solid var(--orange); padding-bottom: 10px; }
-        .warning-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffeeba;
-            padding: 15px;
-            margin: 20px 0;
+
+        /* Sidebar Header/Graphic */
+        .nav-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            min-width: 260px;
+        }
+
+        .rocket-icon {
+            font-size: 24px;
+            margin-right: 20px;
+            filter: drop-shadow(0 0 5px var(--orange));
+        }
+
+        .nav-title {
+            color: var(--orange);
             font-weight: bold;
+            white-space: nowrap;
+            opacity: 0;
+            transition: var(--transition);
         }
-        code { background: #e0e0e0; padding: 2px 5px; border-radius: 4px; }
+
+        nav:hover .nav-title {
+            opacity: 1;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        /* Floating Hover Effect */
+        .nav-links a:hover {
+            background: rgba(241, 90, 34, 0.15); /* Orange tint */
+            border-left: 4px solid var(--orange);
+            transform: translateX(5px);
+            color: var(--orange);
+        }
+
+        /* --- MAIN CONTENT AREA --- */
+        main {
+            margin-left: 80px; /* Space for the collapsed bar */
+            padding: 60px;
+            max-width: 900px;
+            transition: var(--transition);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: var(--orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--navy);
+        }
+
+        .warning-banner {
+            background: linear-gradient(135deg, #ff9d00 0%, #F15A22 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
     </style>
 </head>
 <body>
 
 <nav>
-    <h2>Propulsion Wiki</h2>
-    <a href="#safety">Safety Protocols</a>
-    <a href="#chemistry">Propellant Chemistry</a>
-    <a href="#grain">Grain Design (SRAD)</a>
-    <a href="#static">Static Fire Testing</a>
-    <a href="#resources">Tools & Calculators</a>
+    <div class="nav-header">
+        <span class="rocket-icon">🚀</span>
+        <span class="nav-title">UTSA PROPULSION</span>
+    </div>
+    <div class="nav-links">
+        <a href="#safety">🛡️ Safety SOPs</a>
+        <a href="#mixing">🧪 Propellant Mixing</a>
+        <a href="#design">📐 Grain Geometry</a>
+        <a href="#static">💥 Static Fire</a>
+        <a href="#data">📊 Data Analysis</a>
+    </div>
 </nav>
 
 <main>
-    <h1>SRAD Solid Propulsion Guide</h1>
-    <p>Welcome to the UTSA Aeronautics and Rocketry Propulsion handbook. This site serves as the primary technical reference for designing, casting, and testing single-stage solid motors.</p>
+    <div class="subtitle">Aeronautics & Rocket Club</div>
+    <h1>Single-Stage SRAD Wiki</h1>
+    <p>The definitive guide for solid motor characterization and production.</p>
 
-    <div class="warning-box">
-        ⚠️ SAFETY FIRST: No propellant manufacturing or testing is to be conducted without a Level 2 certified member present and a cleared safety plan.
+    <div class="warning-banner">
+        <span>⚠️</span>
+        <div>
+            DANGER: APCP manufacturing involves energetic materials. Never work alone.
+        </div>
     </div>
 
-    <section id="grain">
-        <h2>BATES Grain Design</h2>
-        <p>For our SRAD motors, we typically utilize <strong>BATES (Ballistic Test Evaluation System)</strong> grains. These allow for a neutral burn surface area as the outer diameter decreases while the inner core and ends increase.</p>
-        
+    <section id="mixing" class="card">
+        <h2>"Blue" Propellant Characterization</h2>
+        <p>Our current standard is the two-grain 54mm subscale configuration. Documentation includes:</p>
         <ul>
-            <li><strong>Core Diameter:</strong> Critical for initial Kn calculation.</li>
-            <li><strong>Inhibitor:</strong> Ensure the outer diameter is properly inhibited to prevent casing burns.</li>
+            <li>Mixing ratios for APCP / Al / Fe2O3</li>
+            <li>Vacuum degassing procedures</li>
+            <li>Curing oven temperature setpoints</li>
         </ul>
-    </section>
-
-    <section id="static">
-        <h2>Static Fire Procedures</h2>
-        <p>Success is measured in data. All motors must undergo a static fire to characterize the <code>burn rate exponent (n)</code> and <code>temperature coefficient (a)</code>.</p>
     </section>
 </main>
 
