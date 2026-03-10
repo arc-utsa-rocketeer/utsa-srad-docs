@@ -1,1 +1,105 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Providence | UTSA Aero</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .hero-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            background: var(--navy);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--orange);
+            font-size: 0.9rem;
+        }
+        .subsystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .lecture-link {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--orange);
+            transition: 0.3s;
+        }
+        .lecture-link:hover {
+            transform: scale(1.03);
+            background: var(--light-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="overlay-bg" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+        <a href="../index.html" class="nav-item">🏠 Home</a>
+        <a href="../index.html#projects" class="nav-item">🚀 All Projects</a>
+        <a href="../lectures/propulsion-srad.html" class="nav-item">🧪 Propulsion Lecture</a>
+    </nav>
+
+    <main>
+        <a href="../index.html" style="text-decoration: none; color: var(--orange); font-weight: bold;">← BACK TO ARCHIVE</a>
+        
+        <h1 style="font-size: 3.5rem; margin-top: 10px;">Providence (2026)</h1>
+        <p>A 30k-ft SRAD Solid motor rocket designed for the Spaceport America Cup.</p>
+
+        <div class="hero-stats">
+            <div class="stat-badge">Target: 30,000 ft</div>
+            <div class="stat-badge">Motor: SRAD Solid (O-Class)</div>
+            <div class="stat-badge">Propellant: "Blue" Formula</div>
+        </div>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <h2>Technical Subsystems</h2>
+        <p>Select a subsystem to view the design "lectures" and manufacturing guides.</p>
+
+        <div class="subsystem-grid">
+            
+            <a href="../lectures/propulsion-srad.html" class="lecture-link">
+                <h3 style="margin-top:0;">🧪 Propulsion</h3>
+                <p>Solid motor characterization, BATES grain geometry, and nozzle assembly.</p>
+                <strong style="color: var(--orange);">View Lecture →</strong>
+            </a>
+
+            <a href="../lectures/structures.html" class="lecture-link">
+                <h3 style="margin-top:0;">📐 Aerostructures</h3>
+                <p>Carbon fiber layup, fin flutter analysis, and airframe integration.</p>
+                <strong style="color: var(--orange);">View Lecture →</strong>
+            </a>
+
+            <a href="../lectures/avionics.html" class="lecture-link">
+                <h3 style="margin-top:0;">📡 Avionics & Recovery</h3>
+                <p>Dual-deployment logic, GPS telemetry, and flight computer wiring.</p>
+                <strong style="color: var(--orange);">View Lecture →</strong>
+            </a>
+
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
