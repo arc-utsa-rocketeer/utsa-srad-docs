@@ -1,54 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>UTSA Propulsion Wiki</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<main>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1 style="font-size: 3rem;">UTSA Aeronautics & Rocket Club</h1>
+        <p style="color: var(--orange); font-weight: bold; letter-spacing: 2px;">LEGACY KNOWLEDGE BASE</p>
+    </div>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
-    <nav id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">×</button>
+    <div class="project-grid">
         
-        <div style="padding: 0 30px 20px 30px;">
-            <h2 style="color: var(--orange); margin: 0;">UTSA AERO</h2>
-            <p style="color: #ccc; font-size: 0.8rem;">Propulsion Division</p>
-        </div>
+        <a href="projects/providence.html" class="project-card">
+            <div class="card-bg" style="background-image: url('images/providence-launch.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <p>2026 Competition</p>
+                <h3>Providence</h3>
+                <span>30k SRAD Solid</span>
+            </div>
+        </a>
 
-        <a href="#safety" class="nav-item">🛡️ Safety SOPs</a>
-        <a href="#mixing" class="nav-item">🧪 Propellant Mixing</a>
-        <a href="#design" class="nav-item">📐 Grain Geometry</a>
-        <a href="#static" class="nav-item">💥 Static Fire</a>
-    </nav>
+        <a href="projects/worminator.html" class="project-card">
+            <div class="card-bg" style="background-image: url('images/worminator.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <p>2025 Competition</p>
+                <h3>Worminator</h3>
+                <span>30k SRAD Solid</span>
+            </div>
+        </a>
 
-    <main>
-        <h1>Propulsion Knowledge Base</h1>
-        <p>A technical guide for UTSA SRAD single-stage solid rockets.</p>
-        
-        <div class="card" id="safety">
-            <h2>Standard Safety Protocol</h2>
-            <p>Before any propellant work begins, ensure the following is met:</p>
-            <ul>
-                <li>Static-dissipative clothing only.</li>
-                <li>Verify humidity levels are below 60% for APCP mixing.</li>
-                <li>Explosive Storage Magazine (ESM) logs updated.</li>
-            </ul>
-        </div>
-    </main>
+        <a href="projects/skyslimit.html" class="project-card">
+            <div class="card-bg" style="background-image: url('images/sky.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <p>2024 Competition</p>
+                <h3>Sky's Limit</h3>
+                <span>30k SRAD Solid</span>
+            </div>
+        </a>
 
-    <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('active');
-        }
-    </script>
+        <a href="projects/linda.html" class="project-card">
+            <div class="card-bg" style="background-image: url('images/linda.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <p>2023 Development</p>
+                <h3>Hybrid Linda</h3>
+                <span>Experimental Hybrid</span>
+            </div>
+        </a>
 
-</body>
-</html>
+        <a href="projects/acme.html" class="project-card">
+            <div class="card-bg" style="background-image: url('images/acme.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <p>2022 Legacy</p>
+                <h3>Acme Co.</h3>
+                <span>Two-Stage Solid</span>
+            </div>
+        </a>
+
+    </div>
+</main>
