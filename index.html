@@ -1,60 +1,94 @@
-<main>
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h1 style="font-size: 3rem;">UTSA Aeronautics & Rocket Club</h1>
-        <p style="color: var(--orange); font-weight: bold; letter-spacing: 2px;">LEGACY KNOWLEDGE BASE</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSA Aero & Rocket Club | Legacy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="project-grid">
-        
-        <a href="projects/providence.html" class="project-card">
-            <div class="card-bg" style="background-image: url('images/providence-launch.jpg');"></div>
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <p>2026 Competition</p>
-                <h3>Providence</h3>
-                <span>30k SRAD Solid</span>
-            </div>
-        </a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="overlay-bg" id="overlay" onclick="toggleMenu()"></div>
 
-        <a href="projects/worminator.html" class="project-card">
-            <div class="card-bg" style="background-image: url('images/worminator.jpg');"></div>
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <p>2025 Competition</p>
-                <h3>Worminator</h3>
-                <span>30k SRAD Solid</span>
-            </div>
-        </a>
+    <nav id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+        <div style="padding: 0 30px 20px 30px;">
+            <h2 style="color: var(--orange); margin: 0;">UTSA AERO</h2>
+            <p style="color: #ccc; font-size: 0.8rem;">Legacy Knowledge Base</p>
+        </div>
+        <a href="index.html" class="nav-item">🏠 Home</a>
+        <a href="#projects" class="nav-item">🚀 Rocket Projects</a>
+        <a href="#" class="nav-item">🧪 Propulsion Lectures</a>
+        <a href="#" class="nav-item">📐 Design Standards</a>
+    </nav>
 
-        <a href="projects/skyslimit.html" class="project-card">
-            <div class="card-bg" style="background-image: url('images/sky.jpg');"></div>
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <p>2024 Competition</p>
-                <h3>Sky's Limit</h3>
-                <span>30k SRAD Solid</span>
-            </div>
-        </a>
+    <main>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 3rem; margin-bottom: 0;">UTSA Aeronautics & Rocket Club</h1>
+            <p style="color: var(--orange); font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Legacy Knowledge Base</p>
+        </div>
 
-        <a href="projects/linda.html" class="project-card">
-            <div class="card-bg" style="background-image: url('images/linda.jpg');"></div>
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <p>2023 Development</p>
-                <h3>Hybrid Linda</h3>
-                <span>Experimental Hybrid</span>
-            </div>
-        </a>
+        <div class="project-grid" id="projects">
+            
+            <a href="projects/providence.html" class="project-card">
+                <div class="card-bg" style="background-image: url('images/providence-launch.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <p>2026 Competition</p>
+                    <h3>Providence</h3>
+                    <span>30k SRAD Solid</span>
+                </div>
+            </a>
 
-        <a href="projects/acme.html" class="project-card">
-            <div class="card-bg" style="background-image: url('images/acme.jpg');"></div>
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <p>2022 Legacy</p>
-                <h3>Acme Co.</h3>
-                <span>Two-Stage Solid</span>
-            </div>
-        </a>
+            <a href="projects/worminator.html" class="project-card">
+                <div class="card-bg" style="background-image: url('images/worminator.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <p>2025 Competition</p>
+                    <h3>Worminator</h3>
+                    <span>30k SRAD Solid</span>
+                </div>
+            </a>
 
-    </div>
-</main>
+            <a href="projects/skyslimit.html" class="project-card">
+                <div class="card-bg" style="background-image: url('images/sky.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <p>2024 Competition</p>
+                    <h3>Sky's Limit</h3>
+                    <span>30k SRAD Solid</span>
+                </div>
+            </a>
+
+            <a href="projects/linda.html" class="project-card">
+                <div class="card-bg" style="background-image: url('images/linda.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <p>2023 Development</p>
+                    <h3>Hybrid Linda</h3>
+                    <span>Experimental Hybrid</span>
+                </div>
+            </a>
+
+            <a href="projects/acme.html" class="project-card">
+                <div class="card-bg" style="background-image: url('images/acme.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <p>2022 Legacy</p>
+                    <h3>Acme Co.</h3>
+                    <span>Two-Stage Solid</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
