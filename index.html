@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSA Aero & Rocketry | Propulsion Wiki</title>
+    <style>
+        :root {
+            --navy: #0C2340;
+            --orange: #F15A22;
+            --light: #f4f4f4;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; }
+        
+        /* Sidebar Navigation */
+        nav {
+            width: 250px;
+            background: var(--navy);
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+        }
+        nav h2 { color: var(--orange); font-size: 1.2rem; }
+        nav a { color: white; text-decoration: none; display: block; padding: 10px 0; border-bottom: 1px solid #1a3a5a; }
+        nav a:hover { color: var(--orange); }
+
+        /* Main Content */
+        main {
+            margin-left: 290px;
+            padding: 40px;
+            max-width: 800px;
+        }
+        h1 { color: var(--navy); border-bottom: 3px solid var(--orange); padding-bottom: 10px; }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffeeba;
+            padding: 15px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        code { background: #e0e0e0; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>Propulsion Wiki</h2>
+    <a href="#safety">Safety Protocols</a>
+    <a href="#chemistry">Propellant Chemistry</a>
+    <a href="#grain">Grain Design (SRAD)</a>
+    <a href="#static">Static Fire Testing</a>
+    <a href="#resources">Tools & Calculators</a>
+</nav>
+
+<main>
+    <h1>SRAD Solid Propulsion Guide</h1>
+    <p>Welcome to the UTSA Aeronautics and Rocketry Propulsion handbook. This site serves as the primary technical reference for designing, casting, and testing single-stage solid motors.</p>
+
+    <div class="warning-box">
+        ⚠️ SAFETY FIRST: No propellant manufacturing or testing is to be conducted without a Level 2 certified member present and a cleared safety plan.
+    </div>
+
+    <section id="grain">
+        <h2>BATES Grain Design</h2>
+        <p>For our SRAD motors, we typically utilize <strong>BATES (Ballistic Test Evaluation System)</strong> grains. These allow for a neutral burn surface area as the outer diameter decreases while the inner core and ends increase.</p>
+        
+        <ul>
+            <li><strong>Core Diameter:</strong> Critical for initial Kn calculation.</li>
+            <li><strong>Inhibitor:</strong> Ensure the outer diameter is properly inhibited to prevent casing burns.</li>
+        </ul>
+    </section>
+
+    <section id="static">
+        <h2>Static Fire Procedures</h2>
+        <p>Success is measured in data. All motors must undergo a static fire to characterize the <code>burn rate exponent (n)</code> and <code>temperature coefficient (a)</code>.</p>
+    </section>
+</main>
+
+</body>
+</html>
