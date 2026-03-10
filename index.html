@@ -2,180 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTSA Aero & Rocketry | Propulsion Wiki</title>
-    <style>
-        :root {
-            --navy: #0C2340;
-            --orange: #F15A22;
-            --white: #ffffff;
-            --light-gray: #f8f9fa;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin: 0;
-            background-color: var(--light-gray);
-            color: var(--navy);
-            display: flex;
-        }
-
-        /* --- MODERN SLIDE-OUT SIDEBAR --- */
-        nav {
-            width: 60px; /* Hidden state width */
-            background: var(--navy);
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            overflow: hidden;
-            transition: var(--transition);
-            z-index: 1000;
-            box-shadow: 4px 0px 15px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Expand on Hover */
-        nav:hover {
-            width: 260px;
-        }
-
-        /* Sidebar Header/Graphic */
-        .nav-header {
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            min-width: 260px;
-        }
-
-        .rocket-icon {
-            font-size: 24px;
-            margin-right: 20px;
-            filter: drop-shadow(0 0 5px var(--orange));
-        }
-
-        .nav-title {
-            color: var(--orange);
-            font-weight: bold;
-            white-space: nowrap;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        nav:hover .nav-title {
-            opacity: 1;
-        }
-
-        /* Navigation Links */
-        .nav-links {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            transition: var(--transition);
-            border-left: 4px solid transparent;
-        }
-
-        /* Floating Hover Effect */
-        .nav-links a:hover {
-            background: rgba(241, 90, 34, 0.15); /* Orange tint */
-            border-left: 4px solid var(--orange);
-            transform: translateX(5px);
-            color: var(--orange);
-        }
-
-        /* --- MAIN CONTENT AREA --- */
-        main {
-            margin-left: 80px; /* Space for the collapsed bar */
-            padding: 60px;
-            max-width: 900px;
-            transition: var(--transition);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            color: var(--orange);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            border-top: 4px solid var(--navy);
-        }
-
-        .warning-banner {
-            background: linear-gradient(135deg, #ff9d00 0%, #F15A22 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-    </style>
+    <title>UTSA Propulsion Wiki</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-    <div class="nav-header">
-        <span class="rocket-icon">🚀</span>
-        <span class="nav-title">UTSA PROPULSION</span>
+    <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 10px;">
+        <span class="icon">🚀</span>
+        <span class="text" style="font-weight:bold; color: var(--orange);">UTSA AERO</span>
     </div>
-    <div class="nav-links">
-        <a href="#safety">🛡️ Safety SOPs</a>
-        <a href="#mixing">🧪 Propellant Mixing</a>
-        <a href="#design">📐 Grain Geometry</a>
-        <a href="#static">💥 Static Fire</a>
-        <a href="#data">📊 Data Analysis</a>
-    </div>
+
+    <a href="#safety" class="nav-item">
+        <span class="icon">🛡️</span>
+        <span class="text">Safety SOPs</span>
+    </a>
+    <a href="#mixing" class="nav-item">
+        <span class="icon">🧪</span>
+        <span class="text">Propellant Mixing</span>
+    </a>
+    <a href="#design" class="nav-item">
+        <span class="icon">📐</span>
+        <span class="text">Grain Geometry</span>
+    </a>
+    <a href="#static" class="nav-item">
+        <span class="icon">💥</span>
+        <span class="text">Static Fire</span>
+    </a>
 </nav>
 
 <main>
-    <div class="subtitle">Aeronautics & Rocket Club</div>
-    <h1>Single-Stage SRAD Wiki</h1>
-    <p>The definitive guide for solid motor characterization and production.</p>
-
-    <div class="warning-banner">
-        <span>⚠️</span>
-        <div>
-            DANGER: APCP manufacturing involves energetic materials. Never work alone.
-        </div>
+    <h1>Propulsion Knowledge Base</h1>
+    <p>Documenting SRAD Single-Stage Solid Rocketry for future Roadrunners.</p>
+    
+    <div class="card">
+        <h2>Getting Started</h2>
+        <p>This wiki contains the technical specifications for our "Blue" propellant formula and 54mm motor hardware.</p>
     </div>
-
-    <section id="mixing" class="card">
-        <h2>"Blue" Propellant Characterization</h2>
-        <p>Our current standard is the two-grain 54mm subscale configuration. Documentation includes:</p>
-        <ul>
-            <li>Mixing ratios for APCP / Al / Fe2O3</li>
-            <li>Vacuum degassing procedures</li>
-            <li>Curing oven temperature setpoints</li>
-        </ul>
-    </section>
 </main>
 
 </body>
