@@ -1,150 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;500&display=swap');
-
-:root {
-    --bg-color: #050b14;        /* Deep Space Black */
-    --surface: #0c1421;         /* Card Surface */
-    --navy: #0C2340;            /* UTSA Navy */
-    --orange: #F15A22;          /* UTSA Orange */
-    --text-main: #e0e6ed;       /* Off-white */
-    --text-dim: #94a3b8;        /* Muted Gray */
-    --sidebar-width: 280px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-/* --- AEROSPACE TYPOGRAPHY --- */
-h1, h2, h3 {
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--white);
-}
-
-code, .tech-data {
-    font-family: 'Roboto Mono', monospace;
-    color: var(--orange);
-    background: rgba(241, 90, 34, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-/* --- MINIMALIST HAMBURGER --- */
-.menu-btn {
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    font-size: 32px; /* Larger for better visibility */
-    background: transparent; /* Removes the button "box" */
-    color: var(--text-main);
-    border: none; /* Removes the border */
-    cursor: pointer;
-    z-index: 1100;
-    padding: 5px; /* Creates an invisible hit area for fingers/mouse */
-    transition: var(--transition);
-    line-height: 1;
-}
-
-.menu-btn:hover {
-    color: var(--orange);
-    transform: scale(1.1); /* Subtle pop on hover */
-}
-
-nav {
-    width: var(--sidebar-width);
-    background: var(--surface);
-    height: 100vh;
-    position: fixed; left: -280px; top: 0;
-    transition: var(--transition);
-    z-index: 1200;
-    border-right: 1px solid rgba(255,255,255,0.05);
-    display: flex; flex-direction: column;
-}
-
-nav.open { left: 0; }
-
-.nav-item {
-    padding: 18px 30px;
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-    transition: 0.2s;
-}
-
-.nav-item:hover {
-    color: var(--orange);
-    background: rgba(241, 90, 34, 0.05);
-    padding-left: 35px;
-}
-
-/* --- PROJECT CARDS --- */
-main { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px; margin-top: 50px;
-}
-
+/* --- UPDATED VISIBILITY FOR CARDS --- */
 .project-card {
-    position: relative; height: 420px;
-    border-radius: 12px; overflow: hidden;
+    position: relative; 
+    height: 420px;
+    border-radius: 12px; 
+    overflow: hidden;
     text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.05);
+    /* Changed: Lighter border for definition */
+    border: 1px solid rgba(255,255,255,0.12); 
+    background-color: var(--surface);
     transition: var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
+    /* Changed: Stronger border and orange glow on hover */
     border-color: var(--orange);
-    box-shadow: 0 10px 30px rgba(241, 90, 34, 0.15);
+    box-shadow: 0 12px 40px rgba(241, 90, 34, 0.25);
 }
 
 .card-bg {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
     background-size: cover; background-position: center;
-    filter: grayscale(30%) brightness(0.6);
+    /* Changed: Increased default brightness from 0.6 to 0.8 */
+    filter: brightness(0.8);
     transition: var(--transition);
+    z-index: 1;
 }
 
 .project-card:hover .card-bg {
-    filter: grayscale(0%) brightness(0.8);
+    /* Changed: Full brightness on hover to make it "light up" */
+    filter: brightness(1);
     transform: scale(1.05);
 }
 
 .card-overlay {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(to top, var(--bg-color) 15%, transparent 100%);
+    /* Changed: Made the gradient more transparent at the top */
+    background: linear-gradient(to top, rgba(5, 11, 20, 0.95) 10%, rgba(5, 11, 20, 0.2) 100%);
+    z-index: 2;
 }
 
 .card-content {
-    position: relative; z-index: 3; padding: 30px; color: white;
+    position: relative; 
+    z-index: 3; 
+    padding: 30px; 
+    /* Changed: Forced white text for maximum contrast */
+    color: #ffffff; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Helps text stand out against busy images */
 }
-
-.card-content h3 { color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
-
-/* Subsystem/Lecture Link styling */
-.lecture-card {
-    background: var(--surface);
-    padding: 25px; border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
-    text-decoration: none; color: var(--text-main);
-    transition: 0.3s;
-}
-
-.lecture-card:hover { border-color: var(--orange); background: #161f2e; }
-
-.overlay-bg {
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7); display: none; z-index: 1150;
-}
-.overlay-bg.active { display: block; }
